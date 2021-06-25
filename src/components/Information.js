@@ -6,14 +6,14 @@ import { history } from '../redux/configureStore';
 const Information = (props) => {
     return (
         <InfoWrap>
-        <Info>
-        NEWS
-        </Info>
-        <Favorites onClick={() => {
-            history.push("/favoriteList");
-        }}>
-            Fav list
-        </Favorites>
+            <Info>
+            NEWS
+            </Info>
+            <Favorites onClick={() => {
+                history.push("/favoriteList");
+            }}>
+                Fav list
+            </Favorites>
         </InfoWrap>
     );
 };

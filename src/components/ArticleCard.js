@@ -1,8 +1,6 @@
 import React from 'react';
-
 import styled from "styled-components";
 
-// import { history } from "../redux/configureStore";
 import NewYorkTimes from "../images/NewYorkTImes.png";
 
 // Card 한개 

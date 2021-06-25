@@ -10,8 +10,9 @@ const SearchResult = (props) => {
     return(
     <ResultContainer>
         <ResultText>
-        <span>{keyword === "" ? "전체" : `"${keyword}"`} 검색 결과</span>
+          <span>{keyword === "" ? "전체" : `"${keyword}"`} 검색 결과</span>
         </ResultText>
+        
         <ResultList/>
     </ResultContainer>
     );
