@@ -5,6 +5,7 @@ import styled from "styled-components";
 // import { history } from "../redux/configureStore";
 import NewYorkTimes from "../images/NewYorkTImes.png";
 
+// Card 한개 
 const ArticleCard = (props) => {
     const Domain = `https://static01.nyt.com/`
     const {abstract, headline, multimedia, lead_paragraph, web_url} = props;
@@ -58,7 +59,7 @@ ArticleCard.defaultProps = {
 const Card = styled.div`
     width : 450px; 
     margin : 5px auto;
-    background : #aaa;
+    background : #eee;
     border-radius : 8px;
 
 `;
@@ -93,7 +94,6 @@ const LeadParagraph = styled.div`
     overflow:hidden;
     width : 200px;
     text-overflow: ellipsis;
-    text-overflow: " [..]";
     white-space:nowrap;
 `;
 

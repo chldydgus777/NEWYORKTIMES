@@ -1,22 +1,45 @@
-import React from 'react';
+import React, {useState, useRef } from 'react';
 import styled from "styled-components";
 
 import IconSearch from "../images/search.png";
 
+import { actionCreators as ArticleActions } from "../redux/modules/search";
+import { useDispatch } from "react-redux";
+
+import { history } from '../redux/configureStore';
+
 const Header = () => {
-    const Resume = () => {
-        window.open("https://www.notion.so/2c3a7614c21c4babb7dc49d9c07c707b")
-    }
+    const dispatch = useDispatch();
+    const [keyword, setKeyword] = useState("");
+
+    const lengthen = useRef();
+
+    const SearchArticles = () => {
+        dispatch(ArticleActions.getArticleSearch(keyword));
+        history.push("/result");
+        setKeyword(null);
+    };
+
     return (
         <Wrap>
             <Title onClick={()=>{
-                Resume()
+                history.push('/')
             }}>
                 Awesome NY Times
             </Title>
             <Search>
-                <Input placeholder="기사를 검색해주세요"></Input>
-                <SearchButton src={IconSearch} />
+                <Input type="text" ref={lengthen} placeholder="기사를 검색해주세요" onChange={(e) => {
+                    setKeyword(e.target.value)
+                }}
+                // 엔터키 처리
+                onKeyPress={() => {
+                if (window.event.keyCode === 13) {
+                        SearchArticles();
+                }
+                }}/>
+                <SearchButton onClick={() =>{
+                    SearchArticles()
+                }} src={IconSearch} />
             </Search>
         </Wrap>
     );
@@ -44,7 +67,7 @@ const Input = styled.input`
     font-size : 16px;
     padding : 3px 0;
     border : 0;
-    border-bottom : 2px solid #5EC6C0;
+    border-bottom : 2px solid black;
     : focus {
     outline : none;
 
@@ -52,7 +75,10 @@ const Input = styled.input`
 `;
 
 const SearchButton = styled.img`
-    width : 26px;
+    width : 24px;
+    position : relative;
+    right : 11%;
+    top : -2%;
     cursor : pointer;
 `;
 

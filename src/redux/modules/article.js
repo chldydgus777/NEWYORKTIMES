@@ -15,14 +15,14 @@ const initialState = {
 
 // axios 
 // NewYorkTimes Open API + key
-const Article_API = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=wTwRh7Blb0nUPWPWvHQCWVupJSoQBqeu`;
-
 const getArticleAPI = () => {
+    const Article_API = `https://api.nytimes.com/svc/search/v2/articlesearch.json?&api-key=wTwRh7Blb0nUPWPWvHQCWVupJSoQBqeu`;
     return function (dispatch, getState, { history }) {
     axios
         .get(Article_API)
         .then((resp) => {
             dispatch(setArticle(resp.data.response.docs));
+            console.log(resp)
     })
         .catch((e) => console.error(e));
     };  

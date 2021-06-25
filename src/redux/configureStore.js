@@ -4,11 +4,14 @@ import { createBrowserHistory } from "history";
 import { connectRouter } from "connected-react-router";
 
 import article from "./modules/article";
+import search from "./modules/search";
 
 export const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
     article : article, 
+    search : search,
+    router: connectRouter(history),
 });
 
 const middlewares = [thunk.withExtraArgument({ history: history })];
