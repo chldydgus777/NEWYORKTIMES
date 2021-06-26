@@ -7,7 +7,7 @@ const Information = (props) => {
     return (
         <InfoWrap>
             <Info>
-            NEWS
+                NEWS
             </Info>
             <Favorites onClick={() => {
                 history.push("/favoriteList");

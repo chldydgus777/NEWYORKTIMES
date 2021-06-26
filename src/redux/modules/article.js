@@ -34,7 +34,6 @@ export default handleActions(
     {
     [SET_ARTICLE]: (state, action) =>
         produce(state, (draft) => {
-        // 액션페이로드 data(인자명을 데이타로 정해줌)를 가져온다
         draft.article_NewYorkTimes = action.payload.article;
     }),
     },
