@@ -15,8 +15,8 @@ const initialState = {
 
 // axios 
 // NewYorkTimes Open API + key
-const getArticleAPI = () => {
-    const Article_API = `https://api.nytimes.com/svc/search/v2/articlesearch.json?&page=${1}&api-key=wTwRh7Blb0nUPWPWvHQCWVupJSoQBqeu`;
+const getArticleAPI = (page) => {
+    const Article_API = `https://api.nytimes.com/svc/search/v2/articlesearch.json?&page=0&api-key=wTwRh7Blb0nUPWPWvHQCWVupJSoQBqeu`;
     return function (dispatch, getState, { history }) {
     axios
         .get(Article_API)

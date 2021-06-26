@@ -42,7 +42,7 @@ const ArticleCard = (props) => {
                 <span style={{fontSize : "14px", marginTop : "5px", cursor : "pointer", fontWeight : "500"}} onClick={() => {
                     NYtimes()
                 }}> 
-                    more
+                    {lead_paragraph.length > 20 ? "more" : "" } 
                 </span>
                 </div>
             </Desc>

@@ -15,9 +15,8 @@ const Header = () => {
     const lengthen = useRef();
 
     const SearchArticles = () => {
-        dispatch(ArticleActions.getArticleSearch(keyword));
+        dispatch(ArticleActions.getArticleSearch(keyword, 1));
         history.push("/result");
-        setKeyword(null);
     };
 
     return (

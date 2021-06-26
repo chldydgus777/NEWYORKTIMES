@@ -11,7 +11,6 @@ import Main from "../pages/Main";
 import FavoriteList from "../pages/FavoriteList";
 
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Information from '../components/Information';
 import SearchResult from "../pages/SearchResult";
 import NotFound from "./NotFount";
@@ -29,7 +28,6 @@ function App() {
           <Route path="/result" exact component={SearchResult} />
           <Route component={NotFound} />
         </Switch>
-        <Footer/>
       </ConnectedRouter>
     </Wrap>
   );

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 import ResultList from "../components/ResultList";
+import Footer from '../components/Footer';
 
 const SearchResult = (props) => {
     const keyword = useSelector((state) => state.search.keyword);
@@ -14,6 +15,7 @@ const SearchResult = (props) => {
         </ResultText>
         
         <ResultList/>
+        <Footer/>
     </ResultContainer>
     );
 };
